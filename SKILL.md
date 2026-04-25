@@ -36,24 +36,20 @@ description: 提供《我的世界》基岩版（Bedrock Edition）所有指令�
 - `[输入项]`：可选（仅出现在命令末尾）
 - `字面量|字面量`：选择其一
 
-## 1.21.50 后加入的新指令
+## 1.21.90 后加入的新指令
 
-以下指令在 1.21.50 之后的版本中加入，在 reference 文件中有额外版本标注：
+以下指令在 1.21.90 之后的版本中加入，在 reference 文件中有额外版本标注：
 
 | 指令 | 加入版本 | 描述 |
 |---|---|---|
-| aimassist | 1.21.50 | 修改玩家的瞄准辅助 |
-| controlscheme | 1.21.80.27 | 修改相机预设的控制方案 |
-| place | 1.21.50.26 | 放置地物、结构模板或结构池 |
 | reloadpacketlimitconfig | 1.21.100.20 | 重新加载数据包限制配置 |
-| set_movement_authority | 1.21.50.20 | 控制移动权威端 |
 
 ## 完整指令列表
 
 | 指令 | 描述 | 新指令 |
 |---|---|---|
 | ability | 赋予或剥夺玩家的能力 | |
-| aimassist | 修改玩家的瞄准辅助 | ✅ |
+| aimassist | 修改玩家的瞄准辅助 | |
 | allowlist | 管理服务器白名单 | |
 | alwaysday | 锁定或解锁终为白日（别名：daylock） | |
 | camera | 修改玩家的相机视角 | |
@@ -63,7 +59,7 @@ description: 提供《我的世界》基岩版（Bedrock Edition）所有指令�
 | clearspawnpoint | 清除玩家的重生点 | |
 | clone | 复制方块区域到另一处 | |
 | connect | 连接至 WebSocket 服务器（别名：wsserver） | |
-| controlscheme | 修改相机预设的控制方案 | ✅ |
+| controlscheme | 修改相机预设的控制方案 | |
 | damage | 对指定实体造成伤害 | |
 | daylock | 锁定或解锁终为白日（别名：alwaysday） | |
 | dedicatedwsserver | 连接至 WebSocket 服务器 | |
@@ -98,7 +94,7 @@ description: 提供《我的世界》基岩版（Bedrock Edition）所有指令�
 | ops | 管理操作员状态 | |
 | particle | 显示粒子效果 | |
 | permission | 管理权限列表 | |
-| place | 放置地物、结构模板或结构池 | ✅ |
+| place | 放置地物、结构模板或结构池 | |
 | playanimation | 播放实体动画 | |
 | playsound | 播放声音事件 | |
 | project | 管理编辑器项目 | |
@@ -117,7 +113,7 @@ description: 提供《我的世界》基岩版（Bedrock Edition）所有指令�
 | script | 调试 GameTest 框架 | |
 | scriptevent | 触发脚本事件 | |
 | sendshowstoreoffer | 发送商店特惠请求 | |
-| set_movement_authority | 控制移动权威端 | ✅ |
+| set_movement_authority | 控制移动权威端 | |
 | setblock | 设置指定位置的方块 | |
 | setworldspawn | 设置世界出生点 | |
 | spawnpoint | 设置玩家出生点 | |
@@ -147,7 +143,7 @@ description: 提供《我的世界》基岩版（Bedrock Edition）所有指令�
 
 ## 中国版Python适配说明
 在中国版开发环境中（Python 2.7），一般使用ModApi的SetCommand接口来执行指令. 以下是中国版指令使用注意事项：
-- 目前中国版版本为1.21.50，请注意指令版本兼容性，避免使用1.21.50之后加入的指令。
+- 目前中国版版本为1.21.90，请注意指令版本兼容性，避免使用1.21.90之后加入的指令。
 - 调用指令时候需要时刻注意调用主体(entityId)，如果不设置则随机选择玩家，可能会导致指令执行失败或者作用于错误的玩家。
 - 作用于世界方块的指令需要区块被加载，否则指令会执行失败。一般要使用者需要先使用 `tickingarea` 指令创建常加载区域，或者确保玩家在指令作用范围内。`tickingarea` 指令执行后离生效有延迟，能用ModApi实现的功能尽量用ModApi实现，实在需要指令的功能再使用指令。
 - 对维度有要求先使用 `execute` 指令切换到正确的维度上下文.
