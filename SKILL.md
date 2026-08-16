@@ -1,5 +1,5 @@
 ---
-name: mc-bedrock-commands
+name: mc-bedrock-commands-skill
 description: 提供《我的世界》基岩版（Bedrock Edition）所有指令的详细语法、参数、权限等级和版本信息，以及目标选择器、坐标系等基础知识和中国版适配指南。当用户需要查询、编写或调试基岩版指令（如 /execute, /tp, /gamemode, /scoreboard 等），或需要了解目标选择器用法、世界坐标系、视角坐标系和中国版适配等基础概念时使用此技能。
 ---
 
@@ -36,13 +36,13 @@ description: 提供《我的世界》基岩版（Bedrock Edition）所有指令�
 - `[输入项]`：可选（仅出现在命令末尾）
 - `字面量|字面量`：选择其一
 
-## 1.21.90 后加入的新指令
+## 1.21.120 后加入的新指令
 
-以下指令在 1.21.90 之后的版本中加入，在 reference 文件中有额外版本标注：
+以下指令在 1.21.120 之后的版本中加入，在 reference 文件中有额外版本标注：
 
 | 指令 | 加入版本 | 描述 |
 |---|---|---|
-| reloadpacketlimitconfig | 1.21.100.20 | 重新加载数据包限制配置 |
+| （暂无） | - | - |
 
 ## 完整指令列表
 
@@ -101,7 +101,7 @@ description: 提供《我的世界》基岩版（Bedrock Edition）所有指令�
 | recipe | 管理玩家的配方 | |
 | reload | 重新加载行为包函数和脚本 | |
 | reloadconfig | 重新加载配置文件 | |
-| reloadpacketlimitconfig | 重新加载数据包限制配置 | ✅ |
+| reloadpacketlimitconfig | 重新加载数据包限制配置 | |
 | remove | 移除实体 | |
 | replaceitem | 替换物品栏中的物品 | |
 | resourceuri | 管理暂停菜单资源链接 | |
@@ -143,7 +143,7 @@ description: 提供《我的世界》基岩版（Bedrock Edition）所有指令�
 
 ## 中国版Python适配说明
 在中国版开发环境中（Python 2.7），一般使用ModApi的SetCommand接口来执行指令. 以下是中国版指令使用注意事项：
-- 目前中国版版本为1.21.90，请注意指令版本兼容性，避免使用1.21.90之后加入的指令。
+- 目前中国版版本已更新至1.21.120，支持包含1.21.100加入的 `reloadpacketlimitconfig`、`@n` 目标选择器、末地 `/setworldspawn` 等特性。请注意避免使用更高预览版中尚未实装的特性。
 - 调用指令时候需要时刻注意调用主体(entityId)，如果不设置则随机选择玩家，可能会导致指令执行失败或者作用于错误的玩家。
 - 作用于世界方块的指令需要区块被加载，否则指令会执行失败。一般要使用者需要先使用 `tickingarea` 指令创建常加载区域，或者确保玩家在指令作用范围内。`tickingarea` 指令执行后离生效有延迟，能用ModApi实现的功能尽量用ModApi实现，实在需要指令的功能再使用指令。
 - 对维度有要求先使用 `execute` 指令切换到正确的维度上下文.

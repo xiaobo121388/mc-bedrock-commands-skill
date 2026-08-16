@@ -19,6 +19,6 @@ locate biome <biome: Biome> | locate structure <structure: Structure> [useNewChu
 
 ## 参数详解
 
-- **`biome`**:Biome - 指定要定位的生物群系的命名空间ID
+- **`biome`**:Biome - 指定要定位的生物群系的命名空间ID（1.21.100 起必须包含命名空间，如 `minecraft:plains`）
 - **`structure`**:Structure - 指定要定位的结构的命名空间ID
 - **`useNewChunksOnly`**:Boolean - 仅定位在尚未生成的区块中的结构，默认为false，必须为布尔值（true或false）。
